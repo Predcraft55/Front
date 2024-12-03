@@ -1,0 +1,149 @@
+@mixin flex($direction, $jc, $ai, $wrap){
+    display: flex;
+    flex-direction: $direction ;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-wrap: $wrap,
+}
+
+@mixin box($color){
+    background-color: $color;
+    width: 75vh;
+    border-left: 5px solid #2ECC71;
+    border-radius: 5px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    border: 0;
+
+}
+
+main{
+
+    background-color: #ECF0F1;
+    width: 90vh;
+    margin: auto;
+    margin-top: 5vh;
+    padding-top: 5vh;
+    border-radius: 20px;
+    box-shadow: -1px 18px 48px 0px rgba(0, 0, 0, 0.322);
+    transition: all 0.5s ease;
+
+    @include flex(column, space-evenly, center, wrap);
+    
+    img{
+        height: 15vh;
+        width: 15vh;
+        border-radius: 50%;
+        border: 5px solid #2ECC71;
+        transition: all 0.5s ease;
+    }
+
+    img:hover{
+        border: 5px solid #E74C3C;
+    }
+
+    .container_bleu{
+        background-color: #3498DB;
+        height: 25vh;
+        width: 80vh;
+        border-radius: 20px 20px 0px 0px ;
+        @include flex(row, center, center, nowrap)
+    }
+    
+
+    a{
+        padding: 10px 15px ;
+        background-color: #E74C3C;
+        color: white;
+        text-decoration: none;
+        font-size: 1em;
+        border-radius: 5px;
+        transition: color 0.5s ease;
+    }
+
+    a:hover{
+        background-color: #aa392c;
+    }
+    a:active{
+        background-color: #2ECC71;
+    }
+    .text{
+        width: 80vh;
+        background-color: #ffffff;
+
+        
+    }
+}
+
+main:hover{
+    scale: 1.02;
+}
+
+.container_bleu{
+
+    h1{margin:0;
+        color: white;
+    }
+
+    h2{
+        margin: 0;
+        color: rgba(255, 255, 255, 0.575);
+    }
+
+    .titre{
+        height: 100%;
+        width: 30%;
+
+        @include flex(column, space-evenly, center, nowrap)
+    }
+}
+
+.propos{
+    @include box(#E1F0FA);
+    p{
+        color: #4C6886
+    }
+}
+
+.competence{
+    @include box(white);
+    p{
+        width: 95%;
+        background-color: #2ECC71;
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+        text-align: center;
+        margin: 16px   auto;
+        
+    }
+
+    p:hover{
+        background-color: #28af61;
+
+    }
+
+    p:active{
+        background-color: #E74C3C
+    }
+
+    
+
+    
+}
+
+p
+
+.contact{
+    @include box(#ffc8c3);
+
+    p{
+    color: #4f8eb8;     
+    }
+    
+}
+

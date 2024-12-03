@@ -1,0 +1,79 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin flex($direction, $jc, $ai, $wrap){
+    display: flex;
+    flex-direction: $direction ;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-wrap: $wrap,
+
+}
+header{
+    .titre{
+        background-color: #FF69B4;
+        @include flex(column, space-evenly,center ,nowrap );
+        padding: 30px;
+        h1{
+            margin: 20px;
+            font-size: 2.5em;
+            
+        } 
+        ul{
+            @include flex(row, space-evenly, center,nowrap );
+            width: 25%;
+            li{
+                list-style: none;
+                color: white
+            };
+        }
+    }
+    .background{
+        background-image: url(/CSS_SAS/Exo_css_Sas3/img/header.webp);
+        height: 35vh;
+        @include flex(row, center, center,nowrap );
+        .reve{
+            @include flex(column, space-evenly, center, nowrap);
+            height: 25vh;
+            width: 40%;
+            background-color: rgba(255, 255, 0, 0.452);
+            color: rgba(0, 0, 0, 0.527);
+            border-radius: 20px;
+            h1{
+                font-size: 2.5em;
+            }
+            p{
+                font-size: 1.4em;
+            }
+            
+            
+            
+        }
+    }
+}
+
+main{
+    
+    .profile{
+        @include flex(row, center, center, wrap);
+        
+
+        .tile{
+            height: 80vh;
+            width: 25%;
+            background-color: #e69dc1;
+            @include flex(column, space-evenly, center, nowrap);
+            
+
+            img{
+                height: 20vh;
+                width: 20vh;
+            }
+        }
+    }
+
+}

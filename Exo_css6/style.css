@@ -1,0 +1,122 @@
+:root {
+    --colorjj: #FFDFD4;
+    --colorlp: #E0F7FA;
+    --colorog: #DCEDC8;
+    --colorhb: #EDE7F6;
+
+    --borderjj: 3px solid #000;
+    --borderlpoghb: 3px solid #FF6F61;
+
+    --back--:#F0F8FF;
+}
+
+
+
+body{
+    height: 100vh;
+    margin: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--back--);
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    
+    
+}
+
+header{
+  
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255,115,98,1) 0%, rgba(255,192,112,1) 100%);;
+    color: white;
+    box-shadow: 0px 2px 22px -6px rgba(0,0,0,0.98);
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    
+    text-align: center;
+}   
+
+header>h1{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+article{
+    display: flex;
+    flex-wrap:wrap ;
+    
+    height: 85%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    justify-content: space-between;
+    align-items: center;
+   
+    
+}
+
+article>div{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 360px ;
+    width: 250px;
+    margin-top: 20px;
+    border-radius: 5%;
+    transition-duration: 1s;
+    transition-property: transform; 
+}
+
+img{
+    width: 95%;
+    border-radius: 50%;
+    transition-duration: 1s;
+    transition-property: transform; 
+}
+
+article>div:hover{
+    transform: scale(1.2);
+    border: var(--borderlpoghb);
+}
+
+.og{
+    background-color: var(--colorog);
+    border: var(--borderlpoghb);
+}
+.jj{
+    background-color: var(--colorjj);
+    border: var(--borderjj);
+}
+.lp{
+    background-color: var(--colorlp);
+    border: var(--borderlpoghb);
+}
+.hb{
+    background-color: var(--colorhb);
+    border: var(--borderlpoghb);
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.30);
+}
+
+@media screen and (max-width : 768px){
+
+    .og {
+        order: 1;
+    }
+    .hb {
+        order: 2;
+    }
+    .lp{
+        order: 3;
+    }   
+    .jj {
+        order: 4;
+    }       
+} 

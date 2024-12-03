@@ -1,0 +1,157 @@
+$jaune : #F1C40F;
+$bleu : #3498DB;
+$vert : #2ECC71;
+$rouge : #E74C3C; 
+$magenta :#8E44AD; 
+$gris : #2C3E50;
+
+@mixin flex($direction, $jc, $ai, $wrap){
+    display: flex;
+    flex-direction: $direction ;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-wrap: $wrap,
+}
+
+@mixin tile($bg_color){
+    height: 50vh;
+    width: 30vh;
+    background-color: $bg_color;
+    border-radius: 10px;
+    @include flex(column, space-evenly, center, wrap );
+    transition: all 0.2s ease;
+    padding: 2px;
+    text-align: center;
+   
+
+    h2{
+        color: white;
+        background-color: darken($bg_color, 4%);
+        padding: 5% 20%;
+        border-radius: 10px;
+    }
+
+    a{
+        background-color: $bleu;
+        color: white;
+        padding: 5% 20%;
+        text-decoration: none;
+        border-radius: 10px;
+    }
+
+    a:hover{
+        background-color: lighten($bleu,10%);
+    }
+
+    & :nth-child(2){
+        font-size: 1.5em;
+    }&:hover{
+        transform: translatey(-10px);
+    }
+    
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    font-size: 1.3em;
+}
+
+header{
+    width: 100%;
+    height: 5vh;
+    background: linear-gradient(90deg, $jaune 0%, $rouge 100%);
+    color: white;
+    @include flex(row, space-between, center, nowrap);
+
+    h1{
+        margin-left: 30px
+    }
+
+    ul{
+        @include flex(row,space-evenly, center,nowrap );
+        width: 20%;
+        li{
+            list-style: none;
+            font-weight: bold;
+        }
+
+        li:hover{
+            color: $jaune;
+            cursor: pointer;
+        }
+    } 
+
+}
+
+.main{
+    @include flex(row, center, center, wrap);
+    height: 60vh;
+    gap: 65px;
+    
+
+    .tile1{
+        transition: all 0.2s ease;
+        @include tile($jaune);
+        h2{
+            background-color: #f1b50f;
+        }
+    }
+
+
+    .tile2{
+        @include tile($bleu)
+    }
+
+    .tile3{
+        @include tile($vert)
+    }
+
+    .tile4{
+        @include tile($rouge)
+    }
+
+    .tile5{
+        @include tile($magenta);
+        h2{
+            background-color: lighten($magenta, 10%) !important;
+        }
+        
+    }
+}
+
+footer{
+    background-color: $gris;
+    height: 35vh;
+    @include flex(row, space-evenly, center, wrap);
+
+    h2{
+        color: $jaune;
+    }
+
+    p{
+        color: white;
+    }
+    
+    li{
+        list-style: none;
+        color: white;
+    }
+    
+}
+
+.tile1 :nth-child(2){
+    font-size: 1.2em;
+    
+    }
+
+
+
+
+
